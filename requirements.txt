@@ -1,4 +1,4 @@
-requests==2.14.1
+requests==2.17.1
 msrest==0.4.8
 msrestazure==0.4.7
 azure-storage==0.34.2
