@@ -2,5 +2,6 @@ requests==2.14.1
 msrest
 msrestazure
 azure-batch==3.0.0
+azure-common==1.1.5
 azure==2.0.0
 
