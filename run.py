@@ -10,4 +10,4 @@ import azure
 #response.write("hello world from "+postreqdata['name'])
 #response.close()
 
-print ("hello world\n')
+print ("hello world\n")
