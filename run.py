@@ -15,6 +15,6 @@ credentials = ServicePrincipalCredentials(
     tenant = '66b66353-3b76-4e41-9dc3-fee328bd400e'
 )
 
-resource_client = ResourceManagementClient(credentials,subscription_id)
+resource_client = ResourceManagementClient(credentials)
 
 print ("hello world\n")
