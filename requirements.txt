@@ -1,5 +1,5 @@
 requests==2.14.1
-msrest
-msrestazure
+msrest==0.4.5
+msrestazure==0.4.5
 azure==2.0.0rc6
 
