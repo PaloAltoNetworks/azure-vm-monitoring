@@ -1,3 +1,4 @@
 requests==2.14.1
+azure-batch
 azure
 
