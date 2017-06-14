@@ -1,5 +1,5 @@
 requests==2.14.1
-msrest
+msrest==0.4.4
 msrestazure==0.4.7
 azure-storage==0.34.2
 azure-servicemanagement-legacy==0.20.6
