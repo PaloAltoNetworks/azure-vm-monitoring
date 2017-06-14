@@ -16,7 +16,7 @@ credentials = ServicePrincipalCredentials(
 )
 
 client = ResourceManagementClient(credentials)
-for item in client.resource_groups.list(None):
+for item in client.resource_groups.list():
     print_item(item)
     
 print ("hello world\n")
