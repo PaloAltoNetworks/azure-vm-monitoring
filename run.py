@@ -5,7 +5,11 @@ sys.path.append(os.getcwd()+"\env\Lib\site-packages")
 import azure
 
 from azure.common.credentials import ServicePrincipalCredentials
+<<<<<<< HEAD
 from azure.mgmt.resource.resources import ResourceManagementClient
+=======
+from azure.mgmt.resource import ResourceManagementClient
+>>>>>>> 27dedc937b9914c24e3ecdad6270fe47d62f48ba
 
 
 subscription_id = "0f3ba96c-a3c7-4eac-b599-ed9882801672"
