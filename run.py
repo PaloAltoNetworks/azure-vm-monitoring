@@ -15,6 +15,8 @@ credentials = ServicePrincipalCredentials(
     tenant = '66b66353-3b76-4e41-9dc3-fee328bd400e'
 )
 
-resource_client = ResourceManagementClient(credentials)
-
+client = ResourceManagementClient(credentials)
+for item in client.resource_groups.list():
+    print_item(item)
+    
 print ("hello world\n")
