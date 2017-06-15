@@ -1,5 +1,3 @@
-requests==2.14.1
-msrest
-msrestazure
-azure==2.0.0rc5
+--find-links wheelhouse
+azure==2.0.0rc6
 
