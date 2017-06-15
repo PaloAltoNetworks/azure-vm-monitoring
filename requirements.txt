@@ -1,3 +1,2 @@
-requests==2.14.1 --install-option="--prefix='D:\home\site\wwwroot\env\Lib\site-packages"
-azure==2.0.0 --install-option="--prefix='D:\home\site\wwwroot\env\Lib\site-packages"
+azure==2.0.0rc6
 
