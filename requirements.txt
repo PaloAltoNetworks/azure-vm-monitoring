@@ -1,4 +1,3 @@
-requests
-azure-common
-azure-mgmt-resource
+requests --install-option="--prefix='D:\home\site\wwwroot\env\Lib\site-packages"
+azure --install-option="--prefix='D:\home\site\wwwroot\env\Lib\site-packages"
 
