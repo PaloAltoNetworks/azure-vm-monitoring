@@ -1,0 +1,18 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ResourceManagementClient	../run.py	/^from azure.mgmt.resource import ResourceManagementClient$/;"	kind:namespace	line:8
+ServicePrincipalCredentials	../run.py	/^from azure.common.credentials import ServicePrincipalCredentials$/;"	kind:namespace	line:7
+azure	../run.py	/^import azure$/;"	kind:namespace	line:5
+client	../run.py	/^client = ResourceManagementClient(credentials, subscription_id)$/;"	kind:variable	line:19
+client_id	../run.py	/^    client_id = 'e916a561-bf5f-45d4-b0a8-da65b729e043',$/;"	kind:variable	line:14
+credentials	../run.py	/^credentials = ServicePrincipalCredentials($/;"	kind:variable	line:13
+json	../run.py	/^import json$/;"	kind:namespace	line:2
+os	../run.py	/^import os$/;"	kind:namespace	line:1
+run.py	../run.py	1;"	kind:file	line:1
+subscription_id	../run.py	/^subscription_id = os.environ.get('AZURE_SUBSCRIPTION_ID', $/;"	kind:variable	line:11
+sys	../run.py	/^import sys$/;"	kind:namespace	line:3
+tenant	../run.py	/^    tenant = '66b66353-3b76-4e41-9dc3-fee328bd400e'$/;"	kind:variable	line:16
