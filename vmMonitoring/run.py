@@ -10,7 +10,7 @@ import xml.etree.ElementTree as et
 
 
 
-
+#Create Service Principal
 #https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal
 
 #ASE
@@ -30,7 +30,7 @@ subscription_id = '0f3ba96c-a3c7-4eac-b599-ed9882801672'
 
 
 #Comma seperated list of resource groups to be monitored.
-ResourceGroupList = ['testrg']
+ResourceGroupList = ['vnet-peered-monitored-rg2']
 apiVersion = '2016-04-30-preview'
 access_token = ""
 token_type = ""
