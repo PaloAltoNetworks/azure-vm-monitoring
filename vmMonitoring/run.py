@@ -30,7 +30,7 @@ subscription_id = '0f3ba96c-a3c7-4eac-b599-ed9882801672'
 
 
 #Comma seperated list of resource groups to be monitored.
-ResourceGroupList = ['vnet-peered-monitored-rg2']
+ResourceGroupList = ['testrg']
 apiVersion = '2016-04-30-preview'
 access_token = ""
 token_type = ""
