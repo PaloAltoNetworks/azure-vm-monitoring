@@ -1,1 +1,0 @@
-# azure-vm-monitoring

@@ -4,15 +4,121 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-ResourceManagementClient	../run.py	/^from azure.mgmt.resource import ResourceManagementClient$/;"	kind:namespace	line:8
-ServicePrincipalCredentials	../run.py	/^from azure.common.credentials import ServicePrincipalCredentials$/;"	kind:namespace	line:7
-azure	../run.py	/^import azure$/;"	kind:namespace	line:5
-client	../run.py	/^client = ResourceManagementClient(credentials, subscription_id)$/;"	kind:variable	line:19
-client_id	../run.py	/^    client_id = 'e916a561-bf5f-45d4-b0a8-da65b729e043',$/;"	kind:variable	line:14
-credentials	../run.py	/^credentials = ServicePrincipalCredentials($/;"	kind:variable	line:13
-json	../run.py	/^import json$/;"	kind:namespace	line:2
-os	../run.py	/^import os$/;"	kind:namespace	line:1
-run.py	../run.py	1;"	kind:file	line:1
-subscription_id	../run.py	/^subscription_id = os.environ.get('AZURE_SUBSCRIPTION_ID', $/;"	kind:variable	line:11
-sys	../run.py	/^import sys$/;"	kind:namespace	line:3
-tenant	../run.py	/^    tenant = '66b66353-3b76-4e41-9dc3-fee328bd400e'$/;"	kind:variable	line:16
+AzureCommand	../AzureDAG-2.py	/^AzureCommand = ["az","group","list","-o","tsv"]$/;"	kind:variable	line:172
+AzureCommand	../AzureDAG-2.py	/^AzureCommand = ["az","login","--service-principal","-u",ServicePrincipal,"-p",SPPassword,"-t",TenantID]$/;"	kind:variable	line:167
+AzureCommand	../AzureDAG-3.py	/^AzureCommand = ["az","group","list","-o","tsv"]$/;"	kind:variable	line:164
+AzureCommand	../AzureDAG-3.py	/^AzureCommand = ["az","login","--service-principal","-u",ServicePrincipal,"-p",SPPassword,"-t",TenantID]$/;"	kind:variable	line:159
+AzureDAG-2.py	../AzureDAG-2.py	1;"	kind:file	line:1
+AzureDAG-3.py	../AzureDAG-3.py	1;"	kind:file	line:1
+DAGAdd	../AzureDAG-2.py	/^        DAGAdd = list(set(MemberList) - set(DAGMembers))$/;"	kind:variable	line:224
+DAGAdd	../AzureDAG-2.py	/^    DAGAdd = []$/;"	kind:variable	line:203
+DAGAdd	../AzureDAG-3.py	/^		DAGAdd = list(set(MemberList) - set(DAGMembers))$/;"	kind:variable	line:216
+DAGAdd	../AzureDAG-3.py	/^	DAGAdd = []$/;"	kind:variable	line:195
+DAGCheck	../AzureDAG-2.py	/^        DAGCheck = DAG_Exists(Firewall,fwkey,Tag)$/;"	kind:variable	line:220
+DAGCheck	../AzureDAG-3.py	/^		DAGCheck = DAG_Exists(Firewall,fwkey,Tag)$/;"	kind:variable	line:212
+DAGDel	../AzureDAG-2.py	/^        DAGDel = list(set(DAGMembers) - set(MemberList))$/;"	kind:variable	line:225
+DAGDel	../AzureDAG-2.py	/^    DAGDel = []$/;"	kind:variable	line:204
+DAGDel	../AzureDAG-3.py	/^		DAGDel = list(set(DAGMembers) - set(MemberList))	$/;"	kind:variable	line:217
+DAGDel	../AzureDAG-3.py	/^	DAGDel = []$/;"	kind:variable	line:196
+DAGMembers	../AzureDAG-2.py	/^        DAGMembers = DAG_Membership(Firewall,fwkey,Tag)$/;"	kind:variable	line:223
+DAGMembers	../AzureDAG-2.py	/^DAGMembers = []$/;"	kind:variable	line:20
+DAGMembers	../AzureDAG-3.py	/^		DAGMembers = DAG_Membership(Firewall,fwkey,Tag)$/;"	kind:variable	line:215
+DAGMembers	../AzureDAG-3.py	/^DAGMembers = []$/;"	kind:variable	line:19
+DAGRegister	../AzureDAG-2.py	/^    DAGRegister = "\\t\\t<register>\\n"$/;"	kind:variable	line:210
+DAGRegister	../AzureDAG-2.py	/^DAGRegister = []$/;"	kind:variable	line:15
+DAGRegister	../AzureDAG-3.py	/^	DAGRegister = "\\t\\t<register>\\n"$/;"	kind:variable	line:202
+DAGRegister	../AzureDAG-3.py	/^DAGRegister = [] $/;"	kind:variable	line:14
+DAGUnregister	../AzureDAG-2.py	/^    DAGUnregister = "\\t\\t<unregister>\\n"$/;"	kind:variable	line:209
+DAGUnregister	../AzureDAG-2.py	/^DAGUnregister = []$/;"	kind:variable	line:14
+DAGUnregister	../AzureDAG-3.py	/^	DAGUnregister = "\\t\\t<unregister>\\n"$/;"	kind:variable	line:201
+DAGUnregister	../AzureDAG-3.py	/^DAGUnregister = []$/;"	kind:variable	line:13
+DAGUpdate	../AzureDAG-2.py	/^            DAGUpdate = 1$/;"	kind:variable	line:229
+DAGUpdate	../AzureDAG-2.py	/^    DAGUpdate = 0$/;"	kind:variable	line:201
+DAGUpdate	../AzureDAG-3.py	/^			DAGUpdate = 1$/;"	kind:variable	line:221
+DAGUpdate	../AzureDAG-3.py	/^	DAGUpdate = 0$/;"	kind:variable	line:193
+DAG_Create	../AzureDAG-2.py	/^def DAG_Create(Firewall,fwkey,Tag):$/;"	kind:function	line:77
+DAG_Create	../AzureDAG-3.py	/^def DAG_Create(Firewall,fwkey,Tag):$/;"	kind:function	line:76
+DAG_Exists	../AzureDAG-2.py	/^def DAG_Exists(Firewall,fwkey,Tag):$/;"	kind:function	line:60
+DAG_Exists	../AzureDAG-3.py	/^def DAG_Exists(Firewall,fwkey,Tag):$/;"	kind:function	line:59
+DAG_Membership	../AzureDAG-2.py	/^def DAG_Membership(Firewall,fwkey,Tag):$/;"	kind:function	line:113
+DAG_Membership	../AzureDAG-3.py	/^def DAG_Membership(Firewall,fwkey,Tag):$/;"	kind:function	line:112
+ET	../AzureDAG-2.py	/^import xml.etree.ElementTree as ET$/;"	kind:namespace	line:11
+ET	../AzureDAG-3.py	/^import xml.etree.ElementTree as ET$/;"	kind:namespace	line:10
+ElementList	../AzureDAG-2.py	/^ElementList = []$/;"	kind:variable	line:18
+ElementList	../AzureDAG-3.py	/^ElementList = []$/;"	kind:variable	line:17
+FWCommit	../AzureDAG-2.py	/^                FWCommit = FW_Commit(Firewall,fwkey)$/;"	kind:variable	line:243
+FWCommit	../AzureDAG-2.py	/^                FWCommit = FW_Commit(Firewall,fwkey)$/;"	kind:variable	line:245
+FWCommit	../AzureDAG-3.py	/^			FWCommit = FW_Commit(Firewall,fwkey)$/;"	kind:variable	line:235
+FWCommit	../AzureDAG-3.py	/^			FWCommit = FW_Commit(Firewall,fwkey)$/;"	kind:variable	line:237
+FWUpdateStatus	../AzureDAG-2.py	/^            FWUpdateStatus = FW_Update(Firewall,fwkey,FWXMLUpdate)$/;"	kind:variable	line:239
+FWUpdateStatus	../AzureDAG-2.py	/^    FWUpdateStatus = 0$/;"	kind:variable	line:200
+FWUpdateStatus	../AzureDAG-3.py	/^		FWUpdateStatus = FW_Update(Firewall,fwkey,FWXMLUpdate)$/;"	kind:variable	line:231
+FWUpdateStatus	../AzureDAG-3.py	/^	FWUpdateStatus = 0$/;"	kind:variable	line:192
+FWXMLUpdate	../AzureDAG-2.py	/^        FWXMLUpdate = XMLHeader + DAGUnregister + DAGRegister + XMLFooter$/;"	kind:variable	line:236
+FWXMLUpdate	../AzureDAG-2.py	/^        FWXMLUpdate = []$/;"	kind:variable	line:202
+FWXMLUpdate	../AzureDAG-3.py	/^		FWXMLUpdate = XMLHeader + DAGUnregister + DAGRegister + XMLFooter$/;"	kind:variable	line:228
+FWXMLUpdate	../AzureDAG-3.py	/^	FWXMLUpdate = []$/;"	kind:variable	line:194
+FW_Commit	../AzureDAG-2.py	/^def FW_Commit(Firewall,fwkey):$/;"	kind:function	line:94
+FW_Commit	../AzureDAG-3.py	/^def FW_Commit(Firewall,fwkey):$/;"	kind:function	line:93
+FW_Update	../AzureDAG-2.py	/^def FW_Update(Firewall,fwkey,FWXMLUpdate):$/;"	kind:function	line:145
+FW_Update	../AzureDAG-3.py	/^def FW_Update(Firewall,fwkey,FWXMLUpdate):$/;"	kind:function	line:144
+FirewallList	../AzureDAG-2.py	/^FirewallList = []$/;"	kind:variable	line:17
+FirewallList	../AzureDAG-3.py	/^FirewallList = []$/;"	kind:variable	line:16
+Generate_XML	../AzureDAG-2.py	/^def Generate_XML(DAGDel,DAGAdd,Tag,DAGUnregister,DAGRegister):$/;"	kind:function	line:128
+Generate_XML	../AzureDAG-3.py	/^def Generate_XML(DAGDel,DAGAdd,Tag,DAGUnregister,DAGRegister):$/;"	kind:function	line:127
+Get_Private_Interface_Info	../AzureDAG-2.py	/^def Get_Private_Interface_Info(RG):$/;"	kind:function	line:42
+Get_Private_Interface_Info	../AzureDAG-3.py	/^def Get_Private_Interface_Info(RG):$/;"	kind:function	line:41
+Get_Public_Interface_Info	../AzureDAG-2.py	/^def Get_Public_Interface_Info(RG):$/;"	kind:function	line:24
+Get_Public_Interface_Info	../AzureDAG-3.py	/^def Get_Public_Interface_Info(RG):$/;"	kind:function	line:23
+GroupMembers	../AzureDAG-2.py	/^        GroupMembers = filter(lambda ElementList:Tag in ElementList[0], ElementList)$/;"	kind:variable	line:216
+GroupMembers	../AzureDAG-3.py	/^		GroupMembers = [ElementList for ElementList in ElementList if Tag in ElementList[0]]$/;"	kind:variable	line:208
+InsecureRequestWarning	../AzureDAG-2.py	/^from requests.packages.urllib3.exceptions import InsecureRequestWarning$/;"	kind:namespace	line:9
+InsecureRequestWarning	../AzureDAG-3.py	/^from requests.packages.urllib3.exceptions import InsecureRequestWarning$/;"	kind:namespace	line:8
+ListAdd	../AzureDAG-2.py	/^    ListAdd = []$/;"	kind:variable	line:205
+ListAdd	../AzureDAG-3.py	/^	ListAdd = []$/;"	kind:variable	line:197
+ListDel	../AzureDAG-2.py	/^    ListDel = []$/;"	kind:variable	line:206
+ListDel	../AzureDAG-3.py	/^	ListDel = []$/;"	kind:variable	line:198
+MemberList	../AzureDAG-2.py	/^        MemberList = []$/;"	kind:variable	line:215
+MemberList	../AzureDAG-3.py	/^		MemberList = []$/;"	kind:variable	line:207
+ResourceGroup	../AzureDAG-2.py	/^    ResourceGroup = line.split('\\t')[3]$/;"	kind:variable	line:175
+ResourceGroup	../AzureDAG-3.py	/^	ResourceGroup = line.split('\\t')[3]$/;"	kind:variable	line:167
+ResourceGroupList	../AzureDAG-2.py	/^ResourceGroupList = []$/;"	kind:variable	line:16
+ResourceGroupList	../AzureDAG-3.py	/^ResourceGroupList = []$/;"	kind:variable	line:15
+ResourceGroupMatch	../variables.py	/^ResourceGroupMatch = ""$/;"	kind:variable	line:5
+ResourceGroups	../AzureDAG-2.py	/^ResourceGroups = check_output(AzureCommand)$/;"	kind:variable	line:173
+ResourceGroups	../AzureDAG-3.py	/^ResourceGroups = check_output(AzureCommand)$/;"	kind:variable	line:165
+SPPassword	../variables.py	/^SPPassword = ""$/;"	kind:variable	line:14
+ServicePrincipal	../variables.py	/^ServicePrincipal = ""$/;"	kind:variable	line:11
+ServicePrincipalLogin	../AzureDAG-2.py	/^ServicePrincipalLogin = check_output(AzureCommand)$/;"	kind:variable	line:168
+ServicePrincipalLogin	../AzureDAG-3.py	/^ServicePrincipalLogin = check_output(AzureCommand)$/;"	kind:variable	line:160
+TagList	../AzureDAG-2.py	/^    TagList = list(TagSet)$/;"	kind:variable	line:212
+TagList	../AzureDAG-2.py	/^TagList = []$/;"	kind:variable	line:21
+TagList	../AzureDAG-3.py	/^	TagList = list(TagSet)$/;"	kind:variable	line:204
+TagList	../AzureDAG-3.py	/^TagList = []$/;"	kind:variable	line:20
+TagSet	../AzureDAG-2.py	/^    TagSet = set(TagList)$/;"	kind:variable	line:211
+TagSet	../AzureDAG-2.py	/^TagSet = set()$/;"	kind:variable	line:22
+TagSet	../AzureDAG-3.py	/^	TagSet = set(TagList)$/;"	kind:variable	line:203
+TagSet	../AzureDAG-3.py	/^TagSet = set()$/;"	kind:variable	line:21
+TempList	../AzureDAG-2.py	/^TempList = []$/;"	kind:variable	line:19
+TempList	../AzureDAG-3.py	/^TempList = []$/;"	kind:variable	line:18
+TenantID	../variables.py	/^TenantID = ""$/;"	kind:variable	line:8
+XMLFooter	../AzureDAG-2.py	/^    XMLFooter = "\\t<\/payload>\\n<\/uid-message>"$/;"	kind:variable	line:208
+XMLFooter	../AzureDAG-3.py	/^	XMLFooter = "\\t<\/payload>\\n<\/uid-message>"$/;"	kind:variable	line:200
+XMLHeader	../AzureDAG-2.py	/^    XMLHeader = "<uid-message>\\n\\t<version>1.0<\/version>\\n\\t<type>update<\/type>\\n\\t<payload>\\n"$/;"	kind:variable	line:207
+XMLHeader	../AzureDAG-3.py	/^	XMLHeader = "<uid-message>\\n\\t<version>1.0<\/version>\\n\\t<type>update<\/type>\\n\\t<payload>\\n"$/;"	kind:variable	line:199
+check_output	../AzureDAG-2.py	/^from subprocess import check_output$/;"	kind:namespace	line:4
+check_output	../AzureDAG-3.py	/^from subprocess import check_output$/;"	kind:namespace	line:3
+etree	../AzureDAG-2.py	/^import xml.etree.ElementTree as ET$/;"	kind:namespace	line:11
+etree	../AzureDAG-3.py	/^import xml.etree.ElementTree as ET$/;"	kind:namespace	line:10
+fwkey	../variables.py	/^fwkey = ""$/;"	kind:variable	line:2
+os	../AzureDAG-2.py	/^import os$/;"	kind:namespace	line:6
+os	../AzureDAG-3.py	/^import os$/;"	kind:namespace	line:5
+requests	../AzureDAG-2.py	/^import requests$/;"	kind:namespace	line:8
+requests	../AzureDAG-3.py	/^import requests$/;"	kind:namespace	line:7
+sys	../AzureDAG-2.py	/^import sys$/;"	kind:namespace	line:7
+sys	../AzureDAG-3.py	/^import sys$/;"	kind:namespace	line:6
+time	../AzureDAG-2.py	/^import time$/;"	kind:namespace	line:5
+time	../AzureDAG-3.py	/^import time$/;"	kind:namespace	line:4
+variables.py	../variables.py	1;"	kind:file	line:1
+xml	../AzureDAG-2.py	/^import xml.etree.ElementTree as ET$/;"	kind:namespace	line:11
+xml	../AzureDAG-3.py	/^import xml.etree.ElementTree as ET$/;"	kind:namespace	line:10
