@@ -38,7 +38,7 @@ token_type = ""
 NewIPTagList = collections.defaultdict(list)
 CurrentIPTagList = collections.defaultdict(list)
 #comma seperated IP Address list  of firewalls to push the tags to
-FirewallList= ["10.5.0.4"]
+FirewallList= ["10.5.0.9"]
 #Comma seperated list of API keys. Make sure the fw list and api key list match
 apikeyList = ["LUFRPT1CU0dMRHIrOWFET0JUNzNaTmRoYmkwdjBkWWM9alUvUjBFTTNEQm93Vmx0OVhFRlNkOXdJNmVwYWk5Zmw4bEs3NjgwMkh5QT0="]
 
