@@ -30,7 +30,7 @@ subscription_id = '0f3ba96c-a3c7-4eac-b599-ed9882801672'
 
 
 #Comma seperated list of resource groups to be monitored.
-ResourceGroupList = ['testrg']
+ResourceGroupList = ['Monitored-rg']
 apiVersion = '2016-04-30-preview'
 access_token = ""
 token_type = ""
@@ -38,7 +38,7 @@ token_type = ""
 NewIPTagList = collections.defaultdict(list)
 CurrentIPTagList = collections.defaultdict(list)
 #comma seperated IP Address list  of firewalls to push the tags to
-FirewallList= ["10.5.0.4"]
+FirewallList= ["54.153.46.9"]
 #Comma seperated list of API keys. Make sure the fw list and api key list match
 apikeyList = ["LUFRPT1CU0dMRHIrOWFET0JUNzNaTmRoYmkwdjBkWWM9alUvUjBFTTNEQm93Vmx0OVhFRlNkOXdJNmVwYWk5Zmw4bEs3NjgwMkh5QT0="]
 
