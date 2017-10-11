@@ -74,12 +74,12 @@ def Build_Tags(RG):
 
         rg_url = "https://management.azure.com/subscriptions/"+subscription_id+"/resourceGroups/"+RG+"/providers/Microsoft.Compute/virtualmachines/"+vmname+"?$expand=instanceView&api-version="+apiVersion
         rg_output = Send_Azure_REST(rg_url)
-        print rg_output['properties']['instanceView']['statuses'][0]
+        print rg_output['properties']['instanceView']['statuses'][1]
         sys.exit(0)
         #Get the OS type
         NewIPTagList[ipaddress].append('azure-tag.GuestOS.'+str(rg_output['properties']['storageProfile']['osDisk']['osType']))
         #Get Running state of VM
-        NewIPTagList[ipaddress].append('azure-tag.vmPowerState.'+str(rg_output['properties']['instanceView']['statuses'][0]))
+        NewIPTagList[ipaddress].append('azure-tag.vmPowerState.'+str(rg_output['properties']['instanceView']['statuses'][1]))
 
         #User defined tags
         if rg_output.get('tags') is not None:
