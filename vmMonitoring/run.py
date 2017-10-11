@@ -79,10 +79,10 @@ def Build_Tags(RG):
         #Get Running state of VM
         for status in rg_output['properties']['instanceView']['statuses']:
             if 'PowerState' in status['code']:
-                print status['code'].split('/')[-1]
-                NewIPTagList[ipaddress].append('azure-tag.vmPowerState.'+str(status['code'].split('/')[-1]))
-                sys.exit(0)
-
+                if status['code'].split('/')[-1] == 'deallocated':
+                    NewIPTagList[ipaddress].append('azure-tag.vmPowerState.Stopped')
+                else: 
+                    NewIPTagList[ipaddress].append('azure-tag.vmPowerState.'+str(status['code'].split('/')[-1]))
        
 
         #User defined tags
