@@ -58,7 +58,7 @@ def Send_Azure_REST(url):
 
 def Build_Tags(RG):
     global NewIPTagList
-    url = "https://management.azure.com/subscriptions/"+subscription_id+"/resourceGroups/"+RG+"/providers/Microsoft.Network/networkInterfaces?api-version="+apiVersion
+    url = "https://management.azure.com/subscriptions/"+subscription_id+"/resourceGroups/"+RG+"/providers/Microsoft.Network/networkInterfaces?api-version=2017-08-01"
     output = Send_Azure_REST(url)
     for key in output['value']:
         #Get ip address of the interface
