@@ -58,7 +58,7 @@ def Send_Azure_REST(url):
 
 def Build_Tags(RG):
     global NewIPTagList
-    url = "https://management.azure.com/subscriptions/"+subscription_id+"/resourceGroups/"+RG+"/providers/Microsoft.Network/networkInterfaces?api-version=2017-08-01"
+    url = "https://management.azure.com/subscriptions/"+subscription_id+"/resourceGroups/"+RG+"/providers/Microsoft.Network/networkInterfaces?api-version="+apiVersion
     output = Send_Azure_REST(url)
     for key in output['value']:
         #Get ip address of the interface
@@ -72,7 +72,7 @@ def Build_Tags(RG):
         NewIPTagList[ipaddress].append('azure-tag.vmname.'+str(vmname))
         NewIPTagList[ipaddress].append('azure-tag.subnet.'+str(subnet))
 
-        rg_url = "https://management.azure.com/subscriptions/"+subscription_id+"/resourceGroups/"+RG+"/providers/Microsoft.Compute/virtualmachines/"+vmname+"?$expand=instanceView&api-version=="+apiVersion
+        rg_url = "https://management.azure.com/subscriptions/"+subscription_id+"/resourceGroups/"+RG+"/providers/Microsoft.Compute/virtualmachines/"+vmname+"?$expand=instanceView&api-version="+apiVersion
         rg_output = Send_Azure_REST(rg_url)
         print rg_output
         sys.exit(0)
