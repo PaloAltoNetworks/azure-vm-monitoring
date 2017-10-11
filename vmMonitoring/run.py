@@ -168,8 +168,8 @@ def Firewall_Update_Tags(firewall_mgmt_ip, api_key, FWXMLUpdate):
         #print response
     except urllib2.HTTPError, e:
         print "HTTPError = " + str(e)
-    else:
-        print response
+    #else:
+    #    print response
 
 
 #Entry point
@@ -205,7 +205,7 @@ def main():
     Unregister += "</unregister>"
     FWXMLUpdate = XMLHeader + Unregister + Register + XMLFooter
 
-    print FWXMLUpdate
+    #print FWXMLUpdate
     for Firewall,api_key in itertools.izip(FirewallList, apikeyList):
         Firewall_Update_Tags(Firewall, api_key, FWXMLUpdate)
 
