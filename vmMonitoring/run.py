@@ -16,21 +16,24 @@ import xml.etree.ElementTree as et
 #ASE
 #https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal
 
-
+#### USER INPUT ######
 #Application ID
 client_id = 'e916a561-bf5f-45d4-b0a8-da65b729e043'
 #Key
-client_secret= '7V/3Vnwf8EhMjy/RSDVkpIAm0H1w3zAt1uScXKlQAiM='
+client_secret = '7V/3Vnwf8EhMjy/RSDVkpIAm0H1w3zAt1uScXKlQAiM='
 #Directory ID
 tenant_id = '66b66353-3b76-4e41-9dc3-fee328bd400e'
-
 #Azure subscription ID
 subscription_id = '0f3ba96c-a3c7-4eac-b599-ed9882801672'
 
-
-
 #Comma seperated list of resource groups to be monitored.
 ResourceGroupList = ['Monitored-rg']
+FirewallList= ["54.219.173.169"]
+#Comma seperated list of API keys. Make sure the fw list and api key list match
+apikeyList = ["LUFRPT1CU0dMRHIrOWFET0JUNzNaTmRoYmkwdjBkWWM9alUvUjBFTTNEQm93Vmx0OVhFRlNkOXdJNmVwYWk5Zmw4bEs3NjgwMkh5QT0="]
+
+
+
 apiVersion = '2016-04-30-preview'
 access_token = ""
 token_type = ""
@@ -38,9 +41,7 @@ token_type = ""
 NewIPTagList = collections.defaultdict(list)
 CurrentIPTagList = collections.defaultdict(list)
 #comma seperated IP Address list  of firewalls to push the tags to
-FirewallList= ["54.153.46.9"]
-#Comma seperated list of API keys. Make sure the fw list and api key list match
-apikeyList = ["LUFRPT1CU0dMRHIrOWFET0JUNzNaTmRoYmkwdjBkWWM9alUvUjBFTTNEQm93Vmx0OVhFRlNkOXdJNmVwYWk5Zmw4bEs3NjgwMkh5QT0="]
+
 
 
 
@@ -71,10 +72,14 @@ def Build_Tags(RG):
         NewIPTagList[ipaddress].append('azure-tag.vmname.'+str(vmname))
         NewIPTagList[ipaddress].append('azure-tag.subnet.'+str(subnet))
 
-        rg_url = "https://management.azure.com/subscriptions/"+subscription_id+"/resourceGroups/"+RG+"/providers/Microsoft.Compute/virtualmachines/"+vmname+"?api-version="+apiVersion
+        rg_url = "https://management.azure.com/subscriptions/"+subscription_id+"/resourceGroups/"+RG+"/providers/Microsoft.Compute/virtualmachines/"+vmname+"?$expand=instanceView&api-version=="+apiVersion
         rg_output = Send_Azure_REST(rg_url)
+        print rg_output
+        sys.exit(0)
         #Get the OS type
         NewIPTagList[ipaddress].append('azure-tag.GuestOS.'+str(rg_output['properties']['storageProfile']['osDisk']['osType']))
+        #Get Running state of VM
+        NewIPTagList[ipaddress].append('azure-tag.vmPowerState.'+str(rg_output['properties']['statuses']['code']))
 
         #User defined tags
         if rg_output.get('tags') is not None:
