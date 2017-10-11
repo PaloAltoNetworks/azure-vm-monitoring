@@ -80,8 +80,8 @@ def Build_Tags(RG):
         for status in rg_output['properties']['instanceView']['statuses']:
             if 'PowerState' in status['code']:
                 print status['code'].split('/')[-1]
-                 NewIPTagList[ipaddress].append('azure-tag.vmPowerState.'+str(status['code'].split('/')[-1]))
-                 sys.exit(0)
+                NewIPTagList[ipaddress].append('azure-tag.vmPowerState.'+str(status['code'].split('/')[-1]))
+                sys.exit(0)
 
        
 
