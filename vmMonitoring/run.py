@@ -10,13 +10,36 @@ import xml.etree.ElementTree as et
 
 
 
-#Create Service Principal
-#https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-service-principal-portal
+##### TO DO ####
+# LOOK INTO AZURE KEY VAULT 
+# USE IN PYTHON?
 
-#ASE
-#https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal
 
-#### USER INPUT ######
+#### BEGIN USER INPUT ######
+#Application ID
+#client_id = 'ENTER THE APPLICATION ID IN BETWEEN THE SINGLE QUOTES'
+#Key
+#client_secret = 'ENTER THE SECRET KEY IN BETWEEN THE SINGLE QUOTES'
+#Directory ID
+#tenant_id = 'ENTER THE DIRECTORY ID IN BETWEEN THE SINGLE QUOTES'
+#Azure subscription ID
+#subscription_id = 'ENTER YOUR SUBCRIPTION ID IN BETWEEN THE SINGLE QUOTES'
+
+#Comma separated list of resource groups to be monitored.
+#For example ResourceGroupList = ['rg1', 'rg2']
+#ResourceGroupList = ['Enter a comma separated list of resource groups to be monitored']
+
+#Comma separated list of Firewall IPs or FQDNs of the management interface
+#For example FirewallLsit = ['1.1.1.1', '2.2.2.2']
+#FirewallList= ['Comma separated list of firewall IPs or FQDNs']
+
+
+#Comma separated list of API keys. Make sure the fw list and api key list match
+#For example apikeyList = ['api key for fw with ip 1.1.1.1', 'api key for fw with ip 2.2.2.2']
+#apikeyList = ['Comma separated list of API keys for firewalls in FirewallList']
+
+##### END USER INPUT ########
+
 #Application ID
 client_id = 'e916a561-bf5f-45d4-b0a8-da65b729e043'
 #Key
@@ -27,8 +50,8 @@ tenant_id = '66b66353-3b76-4e41-9dc3-fee328bd400e'
 subscription_id = '0f3ba96c-a3c7-4eac-b599-ed9882801672'
 
 #Comma seperated list of resource groups to be monitored.
-ResourceGroupList = ['Monitored-rg']
-FirewallList= ["54.219.173.169"]
+ResourceGroupList = ['monitored-rg']
+FirewallList= ["10.5.0.4"]
 #Comma seperated list of API keys. Make sure the fw list and api key list match
 apikeyList = ["LUFRPT1CU0dMRHIrOWFET0JUNzNaTmRoYmkwdjBkWWM9alUvUjBFTTNEQm93Vmx0OVhFRlNkOXdJNmVwYWk5Zmw4bEs3NjgwMkh5QT0="]
 
@@ -181,6 +204,9 @@ def main():
     Register = "<register>"
 
 
+##### TO DO ####
+# Add check to see if firewall is reachable. If not, gracefully exit
+
 #Authenticate and get access token so we can make API calls into Azure
     Get_Azure_Access_Token()
 
@@ -193,13 +219,6 @@ def main():
         Firewall_Get_Tags(Firewall, api_key)
 
     Unregister, Register = Generate_XML(Register, Unregister)
-
-#For debug
-    #file_name = os.path.dirname(os.path.abspath(__file__)) + "\\xml_updates"
-    #f = open(file_name, 'w')
-    #f.write(FWXMLUpdate)
-    #f.close()
-#End debug
 
     Register += "</register>"
     Unregister += "</unregister>"
