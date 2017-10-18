@@ -17,43 +17,28 @@ import xml.etree.ElementTree as et
 
 #### BEGIN USER INPUT ######
 #Application ID
-#client_id = 'ENTER THE APPLICATION ID IN BETWEEN THE SINGLE QUOTES'
+client_id = 'ENTER THE APPLICATION ID IN BETWEEN THE SINGLE QUOTES'
 #Key
-#client_secret = 'ENTER THE SECRET KEY IN BETWEEN THE SINGLE QUOTES'
+client_secret = 'ENTER THE SECRET KEY IN BETWEEN THE SINGLE QUOTES'
 #Directory ID
-#tenant_id = 'ENTER THE DIRECTORY ID IN BETWEEN THE SINGLE QUOTES'
+tenant_id = 'ENTER THE DIRECTORY ID IN BETWEEN THE SINGLE QUOTES'
 #Azure subscription ID
-#subscription_id = 'ENTER YOUR SUBCRIPTION ID IN BETWEEN THE SINGLE QUOTES'
+subscription_id = 'ENTER YOUR SUBCRIPTION ID IN BETWEEN THE SINGLE QUOTES'
 
 #Comma separated list of resource groups to be monitored.
 #For example ResourceGroupList = ['rg1', 'rg2']
-#ResourceGroupList = ['Enter a comma separated list of resource groups to be monitored']
+ResourceGroupList = ['Enter a comma separated list of resource groups to be monitored']
 
 #Comma separated list of Firewall IPs or FQDNs of the management interface
 #For example FirewallLsit = ['1.1.1.1', '2.2.2.2']
-#FirewallList= ['Comma separated list of firewall IPs or FQDNs']
+FirewallList= ['Comma separated list of firewall IPs or FQDNs']
 
 
 #Comma separated list of API keys. Make sure the fw list and api key list match
 #For example apikeyList = ['api key for fw with ip 1.1.1.1', 'api key for fw with ip 2.2.2.2']
-#apikeyList = ['Comma separated list of API keys for firewalls in FirewallList']
+apikeyList = ['Comma separated list of API keys for firewalls in FirewallList']
 
 ##### END USER INPUT ########
-
-#Application ID
-client_id = 'e916a561-bf5f-45d4-b0a8-da65b729e043'
-#Key
-client_secret = '7V/3Vnwf8EhMjy/RSDVkpIAm0H1w3zAt1uScXKlQAiM='
-#Directory ID
-tenant_id = '66b66353-3b76-4e41-9dc3-fee328bd400e'
-#Azure subscription ID
-subscription_id = '0f3ba96c-a3c7-4eac-b599-ed9882801672'
-
-#Comma seperated list of resource groups to be monitored.
-ResourceGroupList = ['monitored-rg']
-FirewallList= ["10.5.0.4"]
-#Comma seperated list of API keys. Make sure the fw list and api key list match
-apikeyList = ["LUFRPT1CU0dMRHIrOWFET0JUNzNaTmRoYmkwdjBkWWM9alUvUjBFTTNEQm93Vmx0OVhFRlNkOXdJNmVwYWk5Zmw4bEs3NjgwMkh5QT0="]
 
 
 
