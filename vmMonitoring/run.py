@@ -6,7 +6,7 @@ import json
 import collections
 import itertools
 import xml.etree.ElementTree as et
-#sys.path.append(os.path.abspath(os.path.join(os.path.dirname( __file__ ), '.')))
+
 
 
 
@@ -37,7 +37,6 @@ FirewallList= ['Comma separated list of firewall IPs or FQDNs']
 #Comma separated list of API keys. Make sure the fw list and api key list match
 #For example apikeyList = ['api key for fw with ip 1.1.1.1', 'api key for fw with ip 2.2.2.2']
 apikeyList = ['Comma separated list of API keys for firewalls in FirewallList']
-
 ##### END USER INPUT ########
 
 
@@ -46,9 +45,10 @@ apiVersion = '2016-04-30-preview'
 access_token = ""
 token_type = ""
 
+
 NewIPTagList = collections.defaultdict(list)
 CurrentIPTagList = collections.defaultdict(list)
-#comma seperated IP Address list  of firewalls to push the tags to
+
 
 
 
@@ -58,15 +58,20 @@ def Send_Azure_REST(url):
     req = urllib2.Request(url)
     req.add_header('Content-Type', 'application/json')
     req.add_header('Authorization', '%s %s' %(token_type, access_token))
-    f = urllib2.urlopen(req).read()
-    w = json.loads(f)
-    #f.close()
-    return w
+    try:
+        f = urllib2.urlopen(req).read()
+    except urllib2.HTTPError as err:
+        if err.code == 404:
+            print ("Resource Group not found...maybe? Got a 404 error. going to exit for now")
+            sys.exit(0)
+    else:
+        w = json.loads(f)
+        return w
 
 
 def Build_Tags(RG):
     global NewIPTagList
-    url = "https://management.azure.com/subscriptions/"+subscription_id+"/resourceGroups/"+RG+"/providers/Microsoft.Network/networkInterfaces?api-version=2017-08-01"
+    url = "https://management.azure.com/subscriptions/"+subscription_id+"/resourceGroups/"+RG+"/providers/Microsoft.Network/networkInterfaces?api-version=2017-08-01"       
     output = Send_Azure_REST(url)
     for key in output['value']:
         #Get ip address of the interface
@@ -101,7 +106,9 @@ def Build_Tags(RG):
 
 def Get_Azure_Access_Token():
     global access_token, token_type
-    data = "grant_type=client_credentials&resource=https://management.core.windows.net/&client_id=%s&client_secret=%s" % (client_id, client_secret)
+    #data = "grant_type=client_credentials&resource=https://management.core.windows.net/&client_id=%s&client_secret=%s" % (client_id, client_secret)
+    data_to_encode = { 'grant_type' : 'client_credentials', 'resource' : 'https://management.core.windows.net/', 'client_id' : client_id, 'client_secret' : client_secret }
+    data = urllib.urlencode(data_to_encode)
     url = "https://login.microsoftonline.com/%s/oauth2/token?api-version=1.0" % (tenant_id)
     req = urllib2.Request(url, data)
     req.add_header('Content-Type', 'application/x-www-form-urlencoded')
@@ -189,8 +196,18 @@ def main():
     Register = "<register>"
 
 
-##### TO DO ####
-# Add check to see if firewall is reachable. If not, gracefully exit
+#check to see if firewall is reachable. If not, gracefully exit
+    for Firewall in FirewallList:
+        url = "https://%s" %(Firewall)
+        try:
+            f = urllib2.urlopen(url, timeout=5)
+        except urllib2.URLError as err:
+            print err
+            print ("FW not found...Exiting for now")
+            sys.exit(0)
+            
+
+            
 
 #Authenticate and get access token so we can make API calls into Azure
     Get_Azure_Access_Token()
