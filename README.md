@@ -1,11 +1,19 @@
 # azure-vm-monitoring
 
-Harvest Tags from Azure Resource Groups and push that ip to tag mapping to PaloAlto networks firewalls.
 
+# Introduction
+When writing firewall security policies to secure assests deployed in Azure, it makes sense to write policies that are logical.
 
-The script published in this repo is designed to be run as an Azure Function and harvets tags from specified Azure Aesource Groups.
-These tags and associated IP addresses are then pushed to one or more Palo Alto Networks firewalls.
-These tags can then be used in Dynamic Address groups to create logical secuirty policies.
+For example: Allow traffic from web-server running linux to db-server running windows
+
+This can be accomplished by harvesting ip and tag information from various cloud resources and making them available in the firewall.
+
+# The solution
+
+The solution uses Azure Function and harvest tags and associated IP addresses of VMs from specified Azure resource groups which are then pushed to one or more firewalls.
+Tags can then be used in Dynamic Address groups to create dynamic security policies. As workloads are added or removed from the Azure Resource Group, the policy is dynamically updated.
+
+![alt_text](az-vm-monitoring.png)
 
 Deployment guide can be found [here](https://github.com/PaloAltoNetworks/azure-vm-monitoring/blob/master/Azure%20VM%20Monitoring%20Setup%20Instructions.pdf)
 
