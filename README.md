@@ -2,16 +2,23 @@
 
 
 # Introduction
-When writing firewall security policies to secure assests deployed in Azure, it makes sense to write policies that are logical.
+The dynamic nature of cloud environments means security also needs to be dynamic. Plao Alto Networks firewalls allow for the creation of dynamic address groups which can be programatically updated via APIs to reflect the changes in your cloud environment.
+This automation is key in keeping up with the dynamic cloud environment.
+
+Also when writing firewall security policies to secure assests deployed in Azure, it makes sense to write policies that are logical.
 
 For example: Allow traffic from web-server running linux to db-server running windows
 
 This can be accomplished by harvesting ip and tag information from various cloud resources and making them available in the firewall.
 
+The harvested ip and tags information can then be used in Dynamic Address Groups to create dynamic security policies. 
+As workloads are added or removed from the Azure Resource Group, the policy is dynamically updated.
+
+
 # The solution
 
-The solution uses Azure Function and harvest tags and associated IP addresses of VMs from specified Azure resource groups which are then pushed to one or more firewalls.
-Tags can then be used in Dynamic Address groups to create dynamic security policies. As workloads are added or removed from the Azure Resource Group, the policy is dynamically updated.
+The published solution uses an Azure Function and harvest tags and associated IP addresses of VMs from specified Azure resource groups and pushes them to one or more firewalls.
+
 
 ![alt_text](az-vm-monitoring.png)
 
