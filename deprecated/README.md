@@ -1,6 +1,9 @@
 # azure-vm-monitoring
 
 
+
+# NOTE: THIS SOLUTION HAS BEEN DEPRECATED. PLEASE USE THE FULLY SUPPORTED VERSION FOUND HERE: https://github.com/PaloAltoNetworks/azure-vm-monitoring
+
 # Introduction
 The dynamic nature of cloud environments means security also needs to be dynamic. Plao Alto Networks firewalls allow for the creation of dynamic address groups which can be programatically updated via APIs to reflect the changes in your cloud environment.
 This automation is key in keeping up with the dynamic cloud environment.
