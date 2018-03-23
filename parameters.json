@@ -1,0 +1,31 @@
+{
+  "parameters": {
+    "clientId": {
+      "value": "CLIENT_ID_FROM_SERVICE_PRINCIPAL"
+    },
+    "clientSecret": {
+      "value": "SECRET_KEY_FROM_SERVICE_PRINCIPAL"
+    },
+    "tenantId": {
+      "value": "TENANT_ID_FROM_SERVICE_PRINCIPAL"
+    },
+    "subscriptionId": {
+      "value": "AZURE_SUBSCRIPTION_ID"
+    },
+    "resourceGroupName": {
+      "value": "RESOURCE_GROUP_NAME"
+    },
+    "vnetName": {
+      "value": "VNET_NAME"
+    },
+    "targetIps": {
+      "value": "COMMA_SEPARATED_LIST_OF_IP_ADDRESSES"
+    },
+    "targetApiKeys": {
+      "value": "COMMA_SEPARATED_LIST_OF_API_KEYS"
+    },
+    "targetVsys" : {
+      "value": "COMMA_SEPARATED_LIST_OF_VSYS_IDS"
+    }
+  }
+}
