@@ -18,7 +18,7 @@ import shutil
 import logging.handlers
 
 PARAMETERS_FILE='parameters.json'
-VERSION="Beta"
+VERSION="1.0"
 
 list_types = [ 'targetIps', 'targetApiKeys', 'targetVsys' ]
 required_params = [ 
