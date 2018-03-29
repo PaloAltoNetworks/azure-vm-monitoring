@@ -36,5 +36,5 @@ other than our official [Downloads page](https://support.paloaltonetworks.com/) 
 
 # Documentation
 * Release Notes: Included in this repository
-* Techincal Documentation: [Deployment Guide]
+* Techincal Documentation: [VM-Series 8.1 Deployment Guide](https://www.paloaltonetworks.com/documentation/81/virtualization/virtualization/set-up-the-vm-series-firewall-on-azure/vm-monitoring-on-azure.html)
 * About the [VM-Series Firewall for Azure](https://azure.paloaltonetworks.com).
