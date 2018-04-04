@@ -1,19 +1,15 @@
 # azure-vm-monitoring
 
 # Introduction
-The dynamic nature of cloud environments means security also needs to be dynamic. Palo Alto Networks firewalls allow you to define dynamic address groups that can be programmatically updated, using the PAN-OS API, to reflect the changes in your cloud environment.
-The VM Monitoring solution on Azure enables you to collect IP address and tag information from virtual machines and register them on the firewall. You can then use this IP address and tag information in dynamic address groups to create security policies that adapt to changes in your Azure environment.  As workloads are added or removed from the Azure Resource Group, the members of this group are automatically updated and Security policy accommodates these changes to ensure that you have a robust, repeatable process. This automation is key in keeping up with the pace of change in the cloud environment.
+The dynamic nature of cloud environments means security also needs to be dynamic. Palo Alto Networks firewalls allow you to define dynamic address groups as core policy elements that can be programmatically updated, using the PAN-OS API, to reflect the changes in your cloud environment.
 
-When defining Security policies to secure assets deployed on Azure, craft  policies in a logical way. For example: Allow traffic from web servers running Linux to database servers running Windows.
+# How it Works
 
+VM Monitoring uses a Python script that runs on a worker node (Linux virtual machine) within an Azure VNet to collect tags and associated IP addresses of VMs from specified Azure resource groups and register the information to the VM-Series or hardware-based firewalls.
 
-# The solution
-
-The published solution uses a script that can be run on a worker node (Linux virtual machine) within an Azure VNet to collect tags and associated IP addresses of VMs from specified Azure resource groups and register the information to one or more firewalls.
+You can then use this IP address and tag information in a dynamic address group to create security policies that adapt to workload changes in your Azure environment. As workloads are added or removed from the Azure Resource Group, the dynamic address group, and corresponding security policy are automatically updated. Automating security policy updates as your cloud environment changes key to ensuring security keeps pace with the speed of the cloud.
 
 ![alt_text](azure-vm-monitoring.png)
-
-
 
 # Support Policy  
 ## Supported
@@ -30,4 +26,5 @@ other than our official [Downloads page](https://support.paloaltonetworks.com/) 
 # Documentation
 * Release Notes: Included in this repository
 * Technical Documentation: [VM Monitoring on Azure](https://www.paloaltonetworks.com/documentation/81/virtualization/virtualization/set-up-the-vm-series-firewall-on-azure/vm-monitoring-on-azure.html)
+* More templates: [Palo Alto Networks Live Community](https://live.paloaltonetworks.com/t5/Cloud-Integration/ct-p/Cloud_Templates)
 * About the [VM-Series Firewall for Azure](https://azure.paloaltonetworks.com).
