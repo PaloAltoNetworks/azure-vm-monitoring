@@ -1,7 +1,9 @@
 # azure-vm-monitoring
 
 
-# NOTE: THIS SOLUTION HAS BEEN DEPRECATED AND HENCE MOVED TO A COMMUNITY SUPPORTED MODEL
+# NOTE: THIS SOLUTION HAS BEEN DEPRECATED AND HENCE MOVED TO A COMMUNITY SUPPORTED MODEL.
+# FOR A FULLY SUPPORTED SOLUTION USING PANORAMA PLEASE REFER TO THIS LINK
+https://www.paloaltonetworks.com/documentation/81/virtualization/virtualization/set-up-the-vm-series-firewall-on-azure/vm-monitoring-on-azure
 
 
 # Introduction
